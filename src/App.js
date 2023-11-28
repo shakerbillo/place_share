@@ -7,6 +7,7 @@ import NewPlace from './places/pages/NewPlace';
 import MainNavigation from './shared/components/Navigation/MainNavigation';
 import UserPlaces from './places/pages/UserPlaces';
 import UpdatePlace from './places/pages/UpdatePlace';
+import Auth from './user/pages/Auth';
 
 const App = () => {
 	return (
@@ -15,9 +16,10 @@ const App = () => {
 			<main>
 				<Routes>
 					<Route path="/" element={<Users />} />
-					<Route path='/:uid/places' element={<UserPlaces/>} />
+					<Route path="/:uid/places" element={<UserPlaces />} />
 					<Route path="/places/new" element={<NewPlace />} />
-					<Route path='/places/:placeId' element={<UpdatePlace />}/>
+					<Route path="/places/:placeId" element={<UpdatePlace />} />
+					<Route path="/auth" element={<Auth/>} />
 				</Routes>
 			</main>
 		</>

@@ -19,7 +19,7 @@ const UserPlaces = () => {
 		},
         {
 			id: 'p2',
-			title: 'Accra',
+			title: 'Tena',
 			description: 'Best City in Ghana',
 			imageUrl:
 				'https://www.gpsmycity.com/img/gd_sight/44016.jpg',
@@ -32,7 +32,7 @@ const UserPlaces = () => {
 		},
         {
 			id: 'p3',
-			title: 'Accra',
+			title: 'Kumasi',
 			description: 'Best City in Ghana',
 			imageUrl:
 				'https://www.gpsmycity.com/img/gd_sight/44016.jpg',
@@ -45,7 +45,7 @@ const UserPlaces = () => {
 		},
         {
 			id: 'p4',
-			title: 'Accra',
+			title: 'Takoridi',
 			description: 'Best City in Ghana',
 			imageUrl:
 				'https://www.gpsmycity.com/img/gd_sight/44016.jpg',
@@ -56,32 +56,7 @@ const UserPlaces = () => {
 			},
             creator:'u4',
 		},
-        {
-			id: 'p5',
-			title: 'Accra',
-			description: 'Best City in Ghana',
-			imageUrl:
-				'https://www.gpsmycity.com/img/gd_sight/44016.jpg',
-			address: 'Indepence Square, Accra, Ghana',
-			location: {
-				lat: 5.5490267,
-				lng: -0.2752163,
-			},
-            creator:'u5',
-		},
-        {
-			id: 'p6',
-			title: 'Accra',
-			description: 'Best City in Ghana',
-			imageUrl:
-				'https://www.gpsmycity.com/img/gd_sight/44016.jpg',
-			address: 'Indepence Square, Accra, Ghana',
-			location: {
-				lat: 5.5490267,
-				lng: -0.2752163,
-			},
-            creator:'u6',
-		},
+      
 	];
     const userId = useParams().uid;
     const loadedPlaces = PLACES.filter(place => place.creator === userId)

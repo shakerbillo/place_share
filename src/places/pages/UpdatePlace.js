@@ -10,6 +10,7 @@ import {
 import useForm from '../../shared/hooks/useForm';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import Card from '../../shared/components/UIElements/Card/Card';
 const PLACES = [
 	{
 		id: 'p1',
@@ -25,7 +26,7 @@ const PLACES = [
 	},
 	{
 		id: 'p2',
-		title: 'Accra',
+		title: 'Tema',
 		description: 'Best City in Ghana',
 		imageUrl: 'https://www.gpsmycity.com/img/gd_sight/44016.jpg',
 		address: 'Indepence Square, Accra, Ghana',
@@ -37,7 +38,7 @@ const PLACES = [
 	},
 	{
 		id: 'p3',
-		title: 'Accra',
+		title: 'Kumasi',
 		description: 'Best City in Ghana',
 		imageUrl: 'https://www.gpsmycity.com/img/gd_sight/44016.jpg',
 		address: 'GRX4+JV7, Accra, Ghana',
@@ -69,21 +70,24 @@ const UpdatePlace = () => {
 	const identifiedPlace = PLACES.find((place) => place.id === placeId);
 
 	useEffect(() => {
-        setFormData(
-          {
-            title: {
-              value: identifiedPlace.title,
-              isValid: true
-            },
-            description: {
-              value: identifiedPlace.description,
-              isValid: true
-            }
-          },
-          true
-        );
-        setIsLoading(false);
-      }, [setFormData, identifiedPlace]);
+		if (identifiedPlace) {
+			setFormData(
+				{
+					title: {
+						value: identifiedPlace.title,
+						isValid: true,
+					},
+					description: {
+						value: identifiedPlace.description,
+						isValid: true,
+					},
+				},
+				true
+			);
+		}
+
+		setIsLoading(false);
+	}, [setFormData, identifiedPlace]);
 
 	const handleUpdateSubmit = (e) => {
 		e.preventDefault();
@@ -93,7 +97,9 @@ const UpdatePlace = () => {
 	if (!identifiedPlace) {
 		return (
 			<div className="center">
+				<Card>
 				<h2>Could not find place!</h2>
+				</Card>
 			</div>
 		);
 	}
@@ -139,3 +145,4 @@ const UpdatePlace = () => {
 };
 
 export default UpdatePlace;
+//
